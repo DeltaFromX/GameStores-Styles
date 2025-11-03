@@ -1,6 +1,6 @@
 const event = new CustomEvent("setCustomConfig");
   
-window.productsGrid = 4;                 // Количество товаров в строке
+window.productsGrid = 5;                 // Количество товаров в строке
 window.oldDesignDropdownProduct = false; // true - включает, false - выключает старе отображение в выпадающем списке товара
 window.currency = "₽";                   // Валюта
 window.defaultPaymentAmount = 100;       // Сумма по умолчанию в поле ввода суммы пополнения
@@ -15,7 +15,7 @@ class GameStores {
         // Информация о вашем ИП (Индивидуальный предприниматель)
         this.infoForIP = 
         {
-            "status": false, // true - включает, false - выключает отображение в футере страницы (Заменяет политику конфиденциальности GS)
+            "status": false , // true - включает, false - выключает отображение в футере страницы (Заменяет политику конфиденциальности GS)
             "message": "ИП Имя Фамилия Очество ИНН: 2512123123123 ОГРНИП: 325200000003213123"
         }
 
@@ -27,9 +27,7 @@ class GameStores {
             "autoplayDelay": 5000,  // Задержка в миллисекундах между слайдами (1 сек = 1000 миллисекунд)
             "heightContainer": 300, // Высота контейнера свайпера
             "images": [             // Ссылки на изображения, которые будут отображаться в свайпере (Разрешение 1280х300)
-                "https://files.facepunch.com/paddy/20241204/dec2024_heroposter_01.jpg",
-                "https://files.facepunch.com/paddy/20241104/gesturepack_hero_01.jpg",
-                "https://files.facepunch.com/paddy/20240905/rust_202409_ttk_heroimage.jpg"
+                "https://bannerlink.png"
             ]
         }
 
@@ -49,16 +47,20 @@ class GameStores {
             "status": true, // true - включает, false - выключает отображение бонусов при пополнении
             "items": [       // Список бонусов при пополнении
                 {
-                    "percent": "5%",
-                    "amount": "~ 200 ₽"
-                },
-                {
                     "percent": "10%",
-                    "amount": "~ 400 ₽"
+                    "amount": "от 500 ₽"
                 },
                 {
                     "percent": "15%",
-                    "amount": "~ 600 ₽"
+                    "amount": "от 1000 ₽"
+                },
+                {
+                    "percent": "20%",
+                    "amount": "от 2500 ₽"
+                },
+                {
+                    "percent": "25%",
+                    "amount": "от 5000 ₽"
                 }
             ]
         }
@@ -122,7 +124,10 @@ class GameStores {
                     const bannerContainer = document.querySelector('.container.bannerContainer');
                     if (bannerContainer) {
                         bannerContainer.style.display = 'none';
-                        bannerContainer.insertAdjacentHTML('beforebegin', this.swiperHTML);
+                    }
+                    const headerContainer = document.querySelector('.Header-module__wrapper');
+                    if (headerContainer) {
+                        headerContainer.insertAdjacentHTML('afterend', this.swiperHTML);
                     }
                 }
             }
@@ -154,6 +159,11 @@ class GameStores {
                 style.textContent = '.LangSwitcher-module__wrapper, .PlayerMenuMobile-module__langSwitcher { display: none; }';
                 style.setAttribute('data-hide-language-switcher', 'true');
                 document.head.appendChild(style);
+            }
+            const headerWrapper = document.querySelector('.Header-module__wrapper');
+            if (headerWrapper) {
+                const navLinks = headerWrapper.querySelectorAll('.HeaderNav-module__link');
+                navLinks.forEach(link => link.style.display = 'none');
             }
         });
 
