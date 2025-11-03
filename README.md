@@ -4,7 +4,7 @@
 
 GameStores Styles - это проект, направленный на улучшение пользовательского интерфейса и функциональности ваших донат магазинов
 
-![Интерфейс GameStores](https://i.postimg.cc/GpCRbDFt/1111111.png)   
+![Интерфейс GameStores](https://gspics.org/images/2025/11/04/IHlfpJ.png)   
 
 ## Инструкция по установке
 
@@ -51,12 +51,45 @@ https://www.rustedit.io/images/imagelibrary/{shortname}.png
 Оригинальный разработчик: https://t.me/wakanda1519
 
 ## Для продвинутых пользователей
-Вы можете изменить ВСЕ цвета на свои, достаточно зайти в CSS и в начале кода увидеть переменные хранящие цвета. Проект распространяется как open source, вы можете модифицировать JS как вам угодно, использовать проект как шаблон для своего проекта, я только рад - что вам он понравился
+Вы можете изменить ВСЕ цвета на свои, достаточно зайти в CSS и в начале кода увидеть переменные хранящие цвета. Проект распространяется как open source, вы можете модифицировать JS как вам угодно, использовать проект как шаблон для своего проекта, я только рад - что вам он понравился         
+
+## Работа с html описанием товаров
+### вайпблок товара
+```html
+<div class="privilege-container">
+    <div class="privilege-item">
+        <div>
+            <div class="privilege-name">Вайпблок</div>
+            <div class="privilege-description">Сколько ждать разблокировки покупки</div>
+        </div>
+        <div class="privilege-value">12 ч.</div>
+    </div>
+</div>
+```
+### динамический цвет privilege-value (пример)
+```html
+<div class="privilege-container">
+    <div class="privilege-item">
+        <div>
+            <div class="privilege-name">Цвет ника</div>
+            <div class="privilege-description">Уникальный цвет ника</div>
+        </div>
+        <div class="privilege-value-colored" style="--nick-color: #F34312;">NICKNAME</div>
+    </div>
+</div>
+```
+### заголовок в описании
+```html
+<div class="privilege-container">
+    <div class="privilege-title">Описание привилегии</div>
+</div>
+```
+остальные примеры можете подсмотреть в [тестовом варианте](https://github.com/DeltaFromX/GameStores-Styles/blob/main/Products/desc.html)
 
 ## Интерфейс
 
 ![Интерфейс GameStores](https://i.postimg.cc/9MzJKWxb/5.png)   
 ![Интерфейс GameStores](https://i.postimg.cc/GtKNnMFJ/6.png) 
-![Интерфейс GameStores](https://i.postimg.cc/bw8L80Cs/7.png)
+![Интерфейс GameStores](https://gspics.org/images/2025/11/04/IHlY0e.png)
 ![Интерфейс GameStores](https://i.postimg.cc/VL0B80s3/1.png)
 ![Интерфейс GameStores](https://i.postimg.cc/Vvxt64s2/4.png)
